@@ -1,4 +1,5 @@
 // Problem Link: https://leetcode.com/problems/dot-product-of-two-sparse-vectors/
+// Difficulty: Medium
 
 // Solution Video: https://www.youtube.com/watch?v=sQNN4xKC1mA
 

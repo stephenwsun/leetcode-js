@@ -1,4 +1,5 @@
 // Problem Link: https://leetcode.com/problems/remove-duplicates-from-sorted-array/
+// Difficulty: Easy
 
 // Solution Video: https://www.youtube.com/watch?v=DEJAZBq0FDA
 
