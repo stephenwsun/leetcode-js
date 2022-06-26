@@ -1,9 +1,11 @@
 // Problem Link: https://leetcode.com/problems/design-underground-system/
 // Difficulty: Medium
 
-// Tip: Use two Hashmaps
+// Solution: https://www.youtube.com/watch?v=C-WgQDqOxHs
 
-// Time Complexity: O(1) for all functions because we're using Hashmaps
+// Tip: Use two hashmaps
+
+// Time Complexity: O(1) for all functions because we're inserting, reading, and deleting from hashmaps
 // Space Complexity: O(N^2 + M), N = stations, M = passengers
 
 var UndergroundSystem = function() {
@@ -28,13 +30,18 @@ UndergroundSystem.prototype.checkIn = function(id, stationName, t) {
  * @return {void}
  */
 UndergroundSystem.prototype.checkOut = function(id, stationName, t) {
-    const [checkInStationName, checkInTime] = this.checkInMap[id]
-    const tripKey = `${checkInStationName}-${stationName}`
+  const [checkInStationName, checkInTime] = this.checkInMap[id]
+  const tripKey = `${checkInStationName}-${stationName}`
     
-    if (!this.tripMap[tripKey]) this.tripMap[tripKey] = [0,0]
-    
+  if (!this.tripMap[tripKey]) {
+    this.tripMap[tripKey] = [t - checkInTime, 1]
+  } else {
     this.tripMap[tripKey][0] += t - checkInTime
     this.tripMap[tripKey][1]++
+  }
+
+  // remove check in so that hashmap only stores active trips and keeps hashmap small
+  delete this.checkInMap[id]
 };
 
 /** 
