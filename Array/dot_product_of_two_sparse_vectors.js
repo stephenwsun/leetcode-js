@@ -7,8 +7,8 @@
 // Tip: Hashmap is not the best solution
 // Tip: If only one of the vectors is sparse, take a binary search approach
 
-// Time Complexity: O(N+M)
-// Space Complexity: O(N+M)
+// Time Complexity: O(N + M)
+// Space Complexity: O(N + M)
 
 /**
  * @param {number[]} nums
