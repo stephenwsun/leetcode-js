@@ -1,7 +1,8 @@
 // Problem Link: https://leetcode.com/problems/linked-list-cycle/
 // Difficulty: Easy
 
-// Solution: https://leetcode.com/problems/linked-list-cycle/discuss/1829768/JavaScript-Easy-to-understand-slow-and-fast-pointers-detailed-explanation
+// Solution 1: https://leetcode.com/problems/linked-list-cycle/discuss/1829768/JavaScript-Easy-to-understand-slow-and-fast-pointers-detailed-explanation
+// Solution 2: https://www.youtube.com/watch?v=gBTe7lFR3vc
 
 // Tip: Utilize a slow and fast pointer to check for cycle
 
