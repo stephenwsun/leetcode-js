@@ -28,13 +28,14 @@ var reverseList = function(head) {
   if (!head) return null
   
   let prev = null
+  let next = null
   let curr = head
   
   while (curr) {
-      const next = curr.next
-      curr.next = prev
-      prev = curr
-      curr = next
+    next = curr.next
+    curr.next = prev
+    prev = curr
+    curr = next
   }
   
   return prev
@@ -42,24 +43,26 @@ var reverseList = function(head) {
 
 // ES6
 var reverseListAlt = function(head) {
-    let [prev, current] = [null, head]
-    while(current) {
-        [current.next, prev, current] = [prev, current, current.next]
-    }
-    return prev
+  let [prev, current] = [null, head]
+
+  while(current) {
+    [current.next, prev, current] = [prev, current, current.next]
+  }
+
+  return prev
 }
 
 // Recursive
 var reverseListAlt2 = function(head) {
 	// base case
-    if (head == null || head.next == null){
-        return head;
-    }
+  if (head == null || head.next == null) {
+    return head;
+  }
 	// go all the way to the end
-    let reversedListHead = reverseList(head.next)
+  let reversedListHead = reverseListAlt2(head.next)
 	// add reverse myself
-    head.next.next = head;
-    head.next = null;
+  head.next.next = head;
+  head.next = null;
 	// go up
-    return reversedListHead
+  return reversedListHead
 };
